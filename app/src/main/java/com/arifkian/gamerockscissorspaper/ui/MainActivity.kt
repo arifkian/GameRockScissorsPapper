@@ -18,21 +18,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-        setClickEvent()
+        setClick()
     }
 
-    private fun setClickEvent() {
-        binding.flActionPlayerBatu.setOnClickListener {
+    private fun setClick() {
+        binding.flActionPlayerRock.setOnClickListener {
             gamePlay(0, Random.nextInt(0, 3))
-            Log.d(TAG, "setClickEvent user choice: Rock")
+            Log.d(TAG, "setClick player choice: Rock")
         }
-        binding.flActionPlayerGunting.setOnClickListener {
+        binding.flActionPlayerScissor.setOnClickListener {
             gamePlay(1, Random.nextInt(0, 3))
-            Log.d(TAG, "setClickEvent user choice: Papper")
+            Log.d(TAG, "setClick player choice: Papper")
         }
-        binding.flActionPlayerKertas.setOnClickListener {
+        binding.flActionPlayerPapper.setOnClickListener {
             gamePlay(2, Random.nextInt(0, 3))
-            Log.d(TAG, "setClickEvent user choice: Scissor")
+            Log.d(TAG, "setClick player choice: Scissor")
         }
         binding.ibReset.setOnClickListener {
             resetGame()
@@ -51,62 +51,62 @@ class MainActivity : AppCompatActivity() {
             binding.ivImageVs.setImageResource(R.drawable.computerwin)
         }
         setSelectPlayer(playerMechanic)
-        setSelectComp(compMechanic)
+        setSelectComputer(compMechanic)
     }
 
     private fun setSelectPlayer(playerMechanic: Int) {
         when (GameMechanic.formInt(playerMechanic)) {
             GameMechanic.ROCK -> {
-                binding.flActionPlayerBatu.setBackgroundResource(R.drawable.cover)
-                binding.flActionPlayerGunting.setBackgroundResource(0)
-                binding.flActionPlayerKertas.setBackgroundResource(0)
+                binding.flActionPlayerRock.setBackgroundResource(R.drawable.cover)
+                binding.flActionPlayerScissor.setBackgroundResource(0)
+                binding.flActionPlayerPapper.setBackgroundResource(0)
             }
             GameMechanic.SCISSOR -> {
-                binding.flActionPlayerBatu.setBackgroundResource(0)
-                binding.flActionPlayerGunting.setBackgroundResource(R.drawable.cover)
-                binding.flActionPlayerKertas.setBackgroundResource(0)
+                binding.flActionPlayerRock.setBackgroundResource(0)
+                binding.flActionPlayerScissor.setBackgroundResource(R.drawable.cover)
+                binding.flActionPlayerPapper.setBackgroundResource(0)
             }
             GameMechanic.PAPER -> {
-                binding.flActionPlayerBatu.setBackgroundResource(0)
-                binding.flActionPlayerGunting.setBackgroundResource(0)
-                binding.flActionPlayerKertas.setBackgroundResource(R.drawable.cover)
+                binding.flActionPlayerRock.setBackgroundResource(0)
+                binding.flActionPlayerScissor.setBackgroundResource(0)
+                binding.flActionPlayerPapper.setBackgroundResource(R.drawable.cover)
             }
             else -> {
-                binding.flActionPlayerBatu.setBackgroundResource(0)
-                binding.flActionPlayerGunting.setBackgroundResource(0)
-                binding.flActionPlayerKertas.setBackgroundResource(0)
+                binding.flActionPlayerRock.setBackgroundResource(0)
+                binding.flActionPlayerScissor.setBackgroundResource(0)
+                binding.flActionPlayerPapper.setBackgroundResource(0)
             }
         }
     }
 
-    private fun setSelectComp(compMechanic: Int) {
+    private fun setSelectComputer(compMechanic: Int) {
         when (GameMechanic.formInt(compMechanic)) {
             GameMechanic.ROCK -> {
-                binding.flActionComBatu.setBackgroundResource(R.drawable.cover)
-                binding.flActionComGunting.setBackgroundResource(0)
-                binding.flActionComKertas.setBackgroundResource(0)
+                binding.flActionComRock.setBackgroundResource(R.drawable.cover)
+                binding.flActionComScissor.setBackgroundResource(0)
+                binding.flActionComPapper.setBackgroundResource(0)
             }
             GameMechanic.SCISSOR -> {
-                binding.flActionComBatu.setBackgroundResource(0)
-                binding.flActionComGunting.setBackgroundResource(R.drawable.cover)
-                binding.flActionComKertas.setBackgroundResource(0)
+                binding.flActionComRock.setBackgroundResource(0)
+                binding.flActionComScissor.setBackgroundResource(R.drawable.cover)
+                binding.flActionComPapper.setBackgroundResource(0)
             }
             GameMechanic.PAPER -> {
-                binding.flActionComBatu.setBackgroundResource(0)
-                binding.flActionComGunting.setBackgroundResource(0)
-                binding.flActionComKertas.setBackgroundResource(R.drawable.cover)
+                binding.flActionComRock.setBackgroundResource(0)
+                binding.flActionComScissor.setBackgroundResource(0)
+                binding.flActionComPapper.setBackgroundResource(R.drawable.cover)
             }
             else -> {
-                binding.flActionComBatu.setBackgroundResource(0)
-                binding.flActionComGunting.setBackgroundResource(0)
-                binding.flActionComKertas.setBackgroundResource(0)
+                binding.flActionComRock.setBackgroundResource(0)
+                binding.flActionComScissor.setBackgroundResource(0)
+                binding.flActionComPapper.setBackgroundResource(0)
             }
         }
     }
 
     private fun resetGame() {
         setSelectPlayer(-1)
-        setSelectComp(-1)
+        setSelectComputer(-1)
         binding.ivImageVs.setImageResource(R.drawable.vs)
     }
 }
