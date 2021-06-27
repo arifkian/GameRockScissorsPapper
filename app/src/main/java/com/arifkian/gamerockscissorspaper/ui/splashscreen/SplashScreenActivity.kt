@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
 import com.arifkian.gamerockscissorspaper.R
-import com.arifkian.gamerockscissorspaper.ui.MainActivity
+import com.arifkian.gamerockscissorspaper.intro.AppIntroActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     private var timer: CountDownTimer? = null
@@ -34,10 +34,9 @@ class SplashScreenActivity : AppCompatActivity() {
 
             override fun onFinish() {
 
-                val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+                val intent = Intent(this@SplashScreenActivity, AppIntroActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
-
                 finish()
             }
         }

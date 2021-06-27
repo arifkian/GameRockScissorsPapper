@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title_field_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="PILIH GAME"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        android:textAllCaps="true" />
+
+    <ImageView
+        android:id="@+id/iv_vs_computer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/landing_page2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_field_name" />
+
+    <TextView
+        android:id="@+id/tv_vs_computer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        tools:text="Player vs COMPUTER"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/iv_vs_computer"
+        app:layout_constraintRight_toRightOf="@id/iv_vs_computer"
+        app:layout_constraintTop_toBottomOf="@id/iv_vs_computer" />
+
+    <ImageView
+        android:id="@+id/iv_vs_player"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="72dp"
+        android:src="@drawable/landing_page1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_vs_computer" />
+
+
+    <TextView
+        android:id="@+id/tv_vs_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        tools:text="Player vs Player"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/iv_vs_player"
+        app:layout_constraintRight_toRightOf="@id/iv_vs_player"
+        app:layout_constraintTop_toBottomOf="@id/iv_vs_player" />
+</androidx.constraintlayout.widget.ConstraintLayout>
